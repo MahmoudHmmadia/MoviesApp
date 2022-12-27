@@ -2,33 +2,7 @@ import {createContext, useContext, useState} from "react";
 import axios from "axios";
 import Api from "../api/apiConfig";
 //@ts-ignore
-const context = createContext({
-    query: '',
-    setQuery: (val: string) => {
-        return val;
-    }
-    ,
-    searchType: '',
-    setSearchType: (val: 'string') => {
-        return val
-    },
-    error: false,
-    setError: (val: boolean) => {
-        return val
-    },
-    setItem: (val: any) => {
-        return val;
-    },
-    setItemInLocalstorage: (val: any) => {
-        return val;
-    },
-    loading: true,
-    setLoading: (val: boolean) => {
-        return val;
-    },
-    getMovieDetails: (id: number | string, type: string) => {
-    }
-});
+const context = createContext();
 export const Provider = ({children}: any) => {
     const api = new Api();
     const [error, setError] = useState(false);
