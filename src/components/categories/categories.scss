@@ -1,0 +1,9 @@
+@use "../../sass/colors/colors" as *;
+
+.categories {
+  .active,
+  li:hover,
+  li a.active {
+    color: $movies-main;
+  }
+}

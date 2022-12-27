@@ -1,0 +1,55 @@
+@use "../../sass/mixins/grid" as *;
+@use "../../sass/colors/colors" as *;
+
+.list {
+  @include grid(250px);
+
+  .item {
+    box-shadow: 1px 1px 15px rgba(3, 2, 23, 1);
+
+    .image {
+      .rate {
+        right: 0;
+
+        .icon {
+          font-size: 40px;
+        }
+
+        .count {
+          left: 50%;
+          transform: translate(-50%, -50%);
+          top: 50%;
+        }
+      }
+    }
+
+    .name {
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        height: 2px;
+        left: 0;
+        width: 50%;
+        background-color: $movies-main;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        bottom: -15px;
+        background-color: #0e102c;
+        border: 1px solid $movies-main;
+        left: 25%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .details {
+      margin: auto 0 0 0;
+    }
+  }
+}

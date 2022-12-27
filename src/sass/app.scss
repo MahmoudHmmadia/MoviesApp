@@ -1,0 +1,100 @@
+@use "./framework/framework";
+@use "./colors/colors" as *;
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body {
+  background: $movie-bg;
+  color: #f9f9f9;
+  font-family: "Fredoka One", cursive;
+  font-size: 16px;
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
+}
+
+.icon {
+  font-size: 22px;
+}
+
+.app {
+  overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+.section {
+  min-height: calc(100vh - 179px);
+  margin-top: 82px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  @media (max-width: 767px) {
+    min-height: calc(100vh - 157px);
+  }
+}
+
+.cl-movie-main {
+  color: $movies-main;
+}
+
+.cl-movie-alt {
+  color: $movies-alt;
+}
+
+.movies-main-bg {
+  background-color: $movies-main;
+}
+
+.movies-alt-bg {
+  background-color: $movies-alt;
+}
+
+.item-box-bg {
+  background-color: #181c3f;
+}
+
+.loader {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: linear-gradient(#fff 16px, transparent 0),
+  linear-gradient($movies-main 16px, transparent 0),
+  linear-gradient($movies-main 16px, transparent 0),
+  linear-gradient(#fff 16px, transparent 0);
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  background-position: left top, left bottom, right top, right bottom;
+  animation: rotate 1s linear infinite;
+}
+
+.cool_title {
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 70%;
+    height: 4px;
+    background-color: $movies-main;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    width: 64px;
+    height: 64px;
+    transform: rotate(0deg);
+  }
+  50% {
+    width: 30px;
+    height: 30px;
+    transform: rotate(180deg);
+  }
+  100% {
+    width: 64px;
+    height: 64px;
+    transform: rotate(360deg);
+  }
+}

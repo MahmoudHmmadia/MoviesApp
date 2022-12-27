@@ -1,0 +1,84 @@
+@use "../../sass/colors/colors" as *;
+
+nav {
+  position: fixed;
+  background: $movie-bg;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000000;
+
+  .logo {
+    .icon {
+      font-size: 50px;
+    }
+  }
+
+  .links {
+    @media (max-width: 767px) {
+      display: none;
+    }
+
+    .active,
+    li:hover {
+      color: $movies-main;
+    }
+  }
+
+  .toggle {
+    @media (max-width: 767px) {
+      width: 30px;
+      height: 20px;
+      span {
+        width: 100%;
+        height: 4px;
+        background-color: $movies-main;
+      }
+    }
+
+    &.close {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        height: 2px;
+      }
+
+      span:nth-child(2) {
+        display: none;
+      }
+
+      span:nth-child(1) {
+        transform: rotate(45deg);
+      }
+
+      span:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.links__toggle {
+  @media (max-width: 767px) {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    width: 50%;
+    right: 0;
+    background: #030217;
+    border-radius: 12px;
+    justify-content: space-evenly;
+    transition: 0.2s all ease-in-out;
+    height: calc(100vh - 82px);
+    z-index: 1;
+    top: 82px;
+    &.hide {
+      display: none;
+    }
+    &.show {
+      display: flex;
+    }
+  }
+}

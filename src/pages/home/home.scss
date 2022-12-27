@@ -1,0 +1,64 @@
+@use "../../sass/colors/colors" as *;
+.home {
+  .image {
+    img {
+      max-width: 500px;
+    }
+    @media (max-width: 991px) {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      opacity: 0.1;
+    }
+  }
+  .content {
+    .home-title {
+      @media (max-width: 767px) {
+        font-size: 24px;
+      }
+    }
+    .popcorn {
+      font-size: 100px;
+    }
+    .custom-radio {
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+      }
+      &::before {
+        width: 22px;
+        height: 22px;
+        border: 1px solid $movies-main;
+        background-color: #0e102c;
+        cursor: pointer;
+      }
+      &::after {
+        width: 14px;
+        height: 14px;
+        background-color: transparent;
+        transition: 0.2s all ease-in-out;
+      }
+      &:checked::after {
+        background-color: $movies-main;
+      }
+      &:hover::after {
+        background-color: $movies-main;
+        opacity: 0.8;
+      }
+    }
+    .search {
+      padding: 10px;
+      border: 3px solid $movies-main;
+      outline: none;
+      font-size: 16px;
+      border-radius: 10px;
+    }
+  }
+}

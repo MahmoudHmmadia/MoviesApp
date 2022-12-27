@@ -1,0 +1,16 @@
+@use "../../sass/colors/colors" as *;
+.pagination {
+  li {
+    width: 20px;
+    height: 20px;
+  }
+
+  .active {
+    color: $movies-main;
+    background-color: #fff;
+  }
+  .off {
+    opacity: .5;
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,97 @@
+@use '../../sass/mixins/grid'as*;
+
+.item_details {
+  .image {
+    left: 0;
+    height: 100%;
+    width: 100%;
+    top: 86px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #0e102c;
+      opacity: .82;
+    }
+  }
+
+  .item__content {
+    .poster {
+      img {
+        width: 300px;
+      }
+    }
+
+    .details {
+      @media (max-width: 991px) {
+        .genres {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    }
+
+    @media (max-width: 767px) {
+      transform: translateY(30%);
+      .poster {
+        img {
+          width: 200px;
+        }
+      }
+    }
+    @media (max-width: 767px) {
+      flex-direction: column;
+      transform: translateY(0);
+      .poster {
+        img {
+          width: 150px;
+        }
+      }
+      .details {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+
+      }
+    }
+  }
+}
+
+.seasons {
+  .season {
+    .season_num,
+    {
+      left: 0;
+      top: 5%;
+      background-color: #ce36929e;
+    }
+
+    .season_details {
+      max-width: 280px;
+    }
+
+  }
+}
+
+.similar_movies {
+  @include grid(150px);
+
+  .rate {
+    left: 0;
+    top: 0;
+
+    .icon {
+      font-size: 40px !important;
+    }
+
+    .rate-count {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
