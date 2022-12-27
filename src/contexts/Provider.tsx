@@ -4,20 +4,21 @@ import Api from "../api/apiConfig";
 //@ts-ignore
 const context = createContext({
     query: '',
-    setQuery: (val: string) => {
+    setQuery: (val: any) => {
     },
-    searchType: (val: string) => {
+    searchType: (val: any) => {
     },
     setSearchType: (val: 'string') => {
     },
     error: false,
-    setError: (val: boolean) => {
+    setError: (val: any) => {
     },
     setItem: (val: any) => {
     },
-    setItemInLocalstorage: {},
+    setItemInLocalstorage: (data: any) => {
+    },
     loading: true,
-    setLoading: (val: boolean) => {
+    setLoading: (val: any) => {
     },
     getMovieDetails: (id: number | string, type: string) => {
     }
