@@ -1,24 +1,8 @@
 import {createContext, useContext, useState} from "react";
-import {MovieType, SeriesType} from "../types/types";
 import axios from "axios";
 import Api from "../api/apiConfig";
 
-const context = createContext({
-    error: false,
-    setError: (val: boolean) => {
-    },
-    query: '',
-    setQuery: (val: string) => {
-    },
-    searchType: '',
-    setSearchType: (val: string) => {
-    },
-    setItem: (val: MovieType & SeriesType) => {
-    },
-    loading: true,
-    setLoading: (val: boolean) => {
-    }
-});
+const context = createContext(null);
 
 export const Provider = ({children}: any) => {
     const api = new Api();
