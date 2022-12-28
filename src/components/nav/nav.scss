@@ -63,7 +63,7 @@ nav {
 .links__toggle {
   @media (max-width: 767px) {
     display: flex;
-    position: absolute;
+    position: fixed;
     flex-direction: column;
     width: 50%;
     right: 0;
