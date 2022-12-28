@@ -6,9 +6,14 @@ import {navCategories} from "./category/category";
 import {UseContext} from './contexts/Provider';
 import Error from "./pages/error/Error";
 import Footer from "./components/footer/Footer";
+import {useNavigate} from "react-router-dom";
 
 function App() {
+    const navigate = useNavigate();
     const {error}: any = UseContext();
+    window.addEventListener('load', () => {
+        navigate('/');
+    });
     return (
         <div className={`app ${error ? "centering-content" : null}`}>
             {
